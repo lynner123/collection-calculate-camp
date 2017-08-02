@@ -2,11 +2,12 @@
 
 function spilt_to_zero(number, interval) {
 //  let result = [];
-//  var sub = number;
+//  var sub = parseFloat(number);
+//  var unsub = parseFloat(interval);
 //  
 //  while(sub > 0){
 //            result.push(sub);
-//            sub = Math.round(sub - interval);
+//            sub = sub - unsub.toFixed(1);
 //  }
 //  return result;
 }

@@ -1,7 +1,9 @@
 'use strict';
 
 function collect_min_number(collection) {
-  //在这里写入代码
+    let num = Math.min(...collection);
+    
+    return num;
 }
 
 module.exports = collect_min_number;
