@@ -1,22 +1,29 @@
 'use strict';
 
 function get_letter_interval(number_a, number_b) {
-  //在这里写入代码
-  var con =[];
-  var asc_a = 96;
+  let result = [];
+  
   if(number_a < number_b){
-            for(var i=number_a; i<=number_b; i++){                      
-                      con.push(String.fromCharCode(asc_a+i));
-                      
-            }            
+            result = makeuparray(number_a,number_b);            
   }else if(number_a > number_b){
-            for(var i=number_a; i>=number_b; i--){
-                      con.push(String.fromCharCode(asc_a+i));
-            }            
+            let array= makeuparray(number_b,number_a);
+            result = array.reverse();            
   }else{
-           con.push(String.fromCharCode(asc_a+number_a));
+           result.push(String.fromCharCode(96+number_a));
   }
-  return con;
+  
+  return result;
+}
+
+function makeuparray(number1,number2){
+          let result = [];
+          
+          for(var i=number1; i<=number2; i++){
+                let letter = String.fromCharCode(96+i);
+                result.push(letter);     
+          }
+          
+          return result;
 }
 
 module.exports = get_letter_interval;

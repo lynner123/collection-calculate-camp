@@ -1,14 +1,15 @@
 'use strict';
 
 function get_intersection(collection_a, collection_b) {
-  //在这里写入代码
-  var con = [];
-  for(var i=0; i<collection_b.length; i++){
-            if(collection_a.includes(collection_b[i])){
-                      con.push(collection_b[i]);
+  let result = [];
+  
+  for(let item of collection_b){
+            if(collection_a.includes(item)){
+                      result.push(item);
             }
   }
-  return con;
+  
+  return result;
 }
 
 module.exports = get_intersection;

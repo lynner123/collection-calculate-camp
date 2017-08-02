@@ -1,35 +1,43 @@
 'use strict';
 
 function get_letter_interval_2(number_a, number_b) {
-  var con =[];
-  var asc_a = 96;
+  let result = [];
+  
   if(number_a < number_b){
-            for(var i=number_a; i<=number_b; i++){                      
-                      con.push(printchar(i));                     
-            }            
+            result = makeuparray(number_a,number_b);            
   }else if(number_a > number_b){
-            for(var i=number_a; i>=number_b; i--){
-                      con.push(printchar(i));
-            }            
+            let array= makeuparray(number_b,number_a);
+            result = array.reverse();            
   }else{
-           con.push(printchar(number_a));
+           result.push(printchar(number_a));
   }
-  return con;
-} 
+  
+  return result;
+}
+
+function makeuparray(number1,number2){
+     let result = [];
+          
+     for(var i=number1; i<=number2; i++){
+         let letter = printchar(i);
+         result.push(letter);     
+     }
+          
+     return result;
+}
 
 function printchar(number) {
-     var cnt1 = parseInt((number-1)/26);
-     var cnt2 = (number-1)%26+1;
-     var ch1;
-     var ch2;     
-     if(cnt1 == 0){
-            ch1='';
+     let letterfirst = parseInt((number-1)/26);
+     let lettersecond = (number-1)%26+1;
+     let ch = '';
+     if(letterfirst === 0){
+            ch = '';
      }else{
-            ch1=String.fromCharCode(cnt1+96);   
+            ch = String.fromCharCode(letterfirst+96);   
      }
-     ch2=String.fromCharCode(cnt2+96);   
+     ch += String.fromCharCode(lettersecond+96);   
    
-     return ch1+ch2;
+     return ch;
  }
 
 module.exports = get_letter_interval_2;

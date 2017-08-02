@@ -2,13 +2,15 @@
 
 function get_union(collection_a, collection_b) {
   //在这里写入代码
-  var con = collection_a;
-  for(var i=0; i<collection_b.length; i++){
-            while(!con.includes(collection_b[i])){
-                    con.push(collection_b[i]);
+  let result = collection_a;
+  
+  for(let item of collection_b){
+            if(!result.includes(item)){
+                      result.push(item);
             }
   }
-  return con;
+  
+  return result;
 }
 
 module.exports = get_union;
