@@ -1,15 +1,16 @@
 'use strict';
 
 function spilt_to_zero(number, interval) {
-//  let result = [];
-//  var sub = parseFloat(number);
-//  var unsub = parseFloat(interval);
-//  
-//  while(sub > 0){
-//            result.push(sub);
-//            sub = sub - unsub.toFixed(1);
-//  }
-//  return result;
+  let result = [];
+  let icnt = Math.ceil(number/interval);
+  let subed = number;
+  for(var i=0; i<=icnt; i++){
+        result.push(subed);
+        subed = parseFloat((subed-interval).toFixed(1));       
+  }
+ 
+  return result;
+  
 }
 
 module.exports = spilt_to_zero;
